@@ -5,6 +5,7 @@ import css from "./App.module.css";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
 import Notification from "../Notification/Notification";
+
 function App() {
   const [votes, setVotes] = useState<Votes>({
     good: 0,
@@ -42,6 +43,7 @@ function App() {
         onReset={resetVotes}
         canReset={totalVotes > 0}
       />
+
       {totalVotes > 0 ? (
         <VoteStats
           votes={votes}
@@ -51,12 +53,6 @@ function App() {
       ) : (
         <Notification />
       )}
-    </div>
-  );
-
-  return (
-    <div className={css.app}>
-      <CafeInfo />
     </div>
   );
 }
